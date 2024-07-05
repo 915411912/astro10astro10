@@ -1,0 +1,287 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Navigationbar from '../components/Navigationbar.astro';
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <Navigationbar/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生作品市场</title>
+    <style>
+        body, h1 {
+            margin: 0; /* 移除默认边距 */
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* 设置默认字体族 */
+            background-color: #f4f8f9; /* 背景颜色 */
+            text-align: center; /* 使页面内容居中 */
+        }
+
+        .header-title {
+            color: #0a0a0b; /* 文字颜色，深蓝色 */
+            font-size: 60px; /* 字体大小 */
+            letter-spacing: 10px; /* 字间距 */
+            text-transform: uppercase; /* 文本转换为大写，更具视觉效果 */
+            margin-top: 50px; /* 上边距 */
+            font-weight: 00; /* 字体粗细 */
+        }
+
+        /* 如果需要添加渐变效果 */
+        .header-title {
+            background: -webkit-linear-gradient(90deg, #1d231e, #427e09);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 48px; /* 移动设备上减小字体大小 */
+                margin-top: 30px; /* 移动设备上减小上边距 */
+            }
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #d1dbce;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #164305;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            width: 30%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(72, 45, 45, 0.1);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .product-info {
+            padding: 10px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #266402;
+            margin-top: 5px;
+        }
+
+        /* 其他样式 */
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="header-title">作品市场</h1>
+    </div>
+
+    <h2>1.新闻传播类</h2>
+    <div class="container">
+        <!-- 产品1 -->
+        <div class="product">
+            <img src="product1.jpg" alt="产品1">
+            <div class="product-info">
+                <h3 class="product-title">产品标题1</h3>
+                <p class="product-description">产品介绍1...</p>
+                <p class="product-price">¥100.00</p>
+            </div>
+        </div>
+
+        <!-- 产品2 -->
+        <div class="product">
+            <img src="product2.jpg" alt="产品2">
+            <div class="product-info">
+                <h3 class="product-title">产品标题2</h3>
+                <p class="product-description">产品介绍2...</p>
+                <p class="product-price">¥200.00</p>
+            </div>
+        </div>
+
+        <!-- 产品3 -->
+        <div class="product">
+            <img src="product3.jpg" alt="产品3">
+            <div class="product-info">
+                <h3 class="product-title">产品标题3</h3>
+                <p class="product-description">产品介绍3...</p>
+                <p class="product-price">¥300.00</p>
+            </div>
+        </div>
+        <!-- 更多产品 -->
+    </div>
+
+    <h2>2.电子信息类</h2>
+    <div class="container">
+        <!-- 产品1 -->
+        <div class="product">
+            <img src="product1.jpg" alt="产品1">
+            <div class="product-info">
+                <h3 class="product-title">产品标题1</h3>
+                <p class="product-description">产品介绍1...</p>
+                <p class="product-price">¥100.00</p>
+            </div>
+        </div>
+
+        <!-- 产品2 -->
+        <div class="product">
+            <img src="product2.jpg" alt="产品2">
+            <div class="product-info">
+                <h3 class="product-title">产品标题2</h3>
+                <p class="product-description">产品介绍2...</p>
+                <p class="product-price">¥200.00</p>
+            </div>
+        </div>
+
+        <!-- 产品3 -->
+        <div class="product">
+            <img src="product3.jpg" alt="产品3">
+            <div class="product-info">
+                <h3 class="product-title">产品标题3</h3>
+                <p class="product-description">产品介绍3...</p>
+                <p class="product-price">¥300.00</p>
+            </div>
+        </div>
+        <!-- 更多产品 -->
+    </div>
+
+    <h2>3.物理类</h2>
+    <div class="container">
+        <!-- 产品1 -->
+        <div class="product">
+            <img src="product1.jpg" alt="产品1">
+            <div class="product-info">
+                <h3 class="product-title">产品标题1</h3>
+                <p class="product-description">产品介绍1...</p>
+                <p class="product-price">¥100.00</p>
+            </div>
+        </div>
+
+        <!-- 产品2 -->
+        <div class="product">
+            <img src="product2.jpg" alt="产品2">
+            <div class="product-info">
+                <h3 class="product-title">产品标题2</h3>
+                <p class="product-description">产品介绍2...</p>
+                <p class="product-price">¥200.00</p>
+            </div>
+        </div>
+
+        <!-- 产品3 -->
+        <div class="product">
+            <img src="product3.jpg" alt="产品3">
+            <div class="product-info">
+                <h3 class="product-title">产品标题3</h3>
+                <p class="product-description">产品介绍3...</p>
+                <p class="product-price">¥300.00</p>
+            </div>
+        </div>
+        <!-- 更多产品 -->
+    </div>
+
+    <h2>4.生命科学类</h2>
+    <div class="container">
+        <!-- 产品1 -->
+        <div class="product">
+            <img src="product1.jpg" alt="产品1">
+            <div class="product-info">
+                <h3 class="product-title">产品标题1</h3>
+                <p class="product-description">产品介绍1...</p>
+                <p class="product-price">¥100.00</p>
+            </div>
+        </div>
+
+        <!-- 产品2 -->
+        <div class="product">
+            <img src="product2.jpg" alt="产品2">
+            <div class="product-info">
+                <h3 class="product-title">产品标题2</h3>
+                <p class="product-description">产品介绍2...</p>
+                <p class="product-price">¥200.00</p>
+            </div>
+        </div>
+
+        <!-- 产品3 -->
+        <div class="product">
+            <img src="product3.jpg" alt="产品3">
+            <div class="product-info">
+                <h3 class="product-title">产品标题3</h3>
+                <p class="product-description">产品介绍3...</p>
+                <p class="product-price">¥300.00</p>
+            </div>
+        </div>
+        <!-- 更多产品 -->
+    </div>
+
+    <h2>5.机械工程类</h2>
+    <div class="container">
+        <!-- 产品1 -->
+        <div class="product">
+            <img src="product1.jpg" alt="产品1">
+            <div class="product-info">
+                <h3 class="product-title">产品标题1</h3>
+                <p class="product-description">产品介绍1...</p>
+                <p class="product-price">¥100.00</p>
+            </div>
+        </div>
+
+        <!-- 产品2 -->
+        <div class="product">
+            <img src="product2.jpg" alt="产品2">
+            <div class="product-info">
+                <h3 class="product-title">产品标题2</h3>
+                <p class="product-description">产品介绍2...</p>
+                <p class="product-price">¥200.00</p>
+            </div>
+        </div>
+
+        <!-- 产品3 -->
+        <div class="product">
+            <img src="product3.jpg" alt="产品3">
+            <div class="product-info">
+                <h3 class="product-title">产品标题3</h3>
+                <p class="product-description">产品介绍3...</p>
+                <p class="product-price">¥300.00</p>
+            </div>
+        </div>
+        <!-- 更多产品 -->
+    </div>
+</body>
+</html>

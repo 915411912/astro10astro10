@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Navigationbar from '../components/Navigationbar.astro';
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<Navigationbar/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站介绍</title>
+    <style>
+		 body, h1 {
+            margin: 0; /* 移除默认边距 */
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* 设置默认字体族 */
+            background-color: #f4f8f9; /* 背景颜色 */
+            text-align: center; /* 使页面内容居中 */
+        }
+
+        .header-title {
+            color: #0a0a0b; /* 文字颜色，深蓝色 */
+            font-size: 60px; /* 字体大小 */
+            letter-spacing: 3px; /* 字间距 */
+            text-transform: uppercase; /* 文本转换为大写，更具视觉效果 */
+            margin-top: 50px; /* 上边距 */
+            font-weight: 500; /* 字体粗细 */
+        }
+
+        /* 如果需要添加渐变效果 */
+        .header-title {
+            background: -webkit-linear-gradient(90deg, #454646, #579022);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 48px; /* 移动设备上减小字体大小 */
+                margin-top: 30px; /* 移动设备上减小上边距 */
+            }
+        }
+        body {
+            font-family: '微软雅黑', 'Arial', sans-serif;
+            background-color: #f4f8f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 黑板样式 */
+        .blackboard {
+            background-color: #193908; /* 黑板颜色 */
+            color: #fff; /* 文字颜色 */
+            padding: 40px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .blackboard::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1) 1px,
+                transparent 1px,
+                transparent 4px
+            );
+        }
+
+        .blackboard h2 {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        /* 礼物盒样式 */
+        .gift-box {
+            background-color: #f9e0a24a; /* 礼物盒颜色 */
+            padding: 40px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gift-box h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .gift-box .gift-content {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gift-box:hover .gift-content {
+            opacity: 1;
+        }
+
+        /* 礼物盒打开效果 */
+        .gift-box::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            border-radius: 5px;
+            z-index: -1;
+            transition: top 0.3s ease;
+        }
+
+        .gift-box:hover::after {
+            top: 0;
+        }
+
+        /* 其他样式 */
+        /* ... */
+    </style>
+</head>
+<body>
+	<div class="header">
+        <h1 class="header-title">这是关于网站的一些介绍</h1>
+    </div>
+
+    <div class="container">
+        <!-- 网站作用介绍 -->
+        <div class="blackboard">
+            <h2>网站作用介绍</h2>
+            <p>本平台致力于帮助大学生进行作业互助。</p>
+			<p>在这里，学生可以上传自己的作业作品，</p>
+			<p>并附上作品的描述和阐释。</p>
+            <p>其他用户可以浏览这些作品，</p>
+			<p>并通过支付一定的授权费用来获得作品的使用权，</p>
+		    <p>当然，这一切都在作者的授权范围内。</p>
+            <!-- 更多文字介绍 -->
+        </div>
+
+        <!-- 利润收取方法介绍 -->
+        <div class="gift-box">
+            <h2>把鼠标移到这里试试</h2>
+            <div class="gift-content">
+                <p>这里是利润收取方法的介绍，</p>
+				<p>关于每一笔授权费我们会进行抽成，</p>
+				<p>抽成的比例根据金额会有相应的调整</p>
+				<p>放心，每一单收取的金额会控制在0.1-5元之间</p>
+                <!-- 更多文字介绍 -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

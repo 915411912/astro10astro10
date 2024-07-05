@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Navigationbar from '../components/Navigationbar.astro';
+---
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薄荷绿主题页面</title>
+    <Navigationbar/>
+    
+    <style>
+        body {
+            font-family: '微软雅黑', 'Arial', sans-serif;
+            background-color: #e8f5e9; /* 薄荷绿背景 */
+            color: #333; /* 文字颜色 */
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff; /* 内容区域白色背景 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #5d714f; /* 标题颜色 */
+        }
+
+        .modules {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .module {
+            background-color: #fff;
+            border: 1px solid #e8f5e9; /* 薄荷绿边框 */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 20px;
+            width: calc(33.333% - 40px); /* 三个模块宽度 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            color: #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+            text-decoration: none; /* 移除下划线 */
+            color: #333;
+        }
+
+        .module:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            color: #4e6142; 
+        }
+
+        .module h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .module p {
+            font-size: 18px;
+        }
+
+        /* 添加动画效果 */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .module .icon {
+            display: inline-block;
+            font-size: 48px;
+            animation: rotate 5s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>这是我搭建这个网站的一些学习笔记，希望可以帮助到你</h1>
+
+        <div class="modules">
+            <!-- 链接到pages/md/1.md -->
+            <a href="/md/1/" class="module">
+            <astro网站部署/a>
+                <h2>astro网站部署</h2>
+                <p>你可以了解到如何部署一个属于你的astro网站</p>
+                <div class="icon">🚀</div>
+            </a>
+            <div class="module">
+                <h2>模块二</h2>
+                <p>这里是模块二的介绍内容。</p>
+                <div class="icon">🌟</div>
+            </div>
+            <div class="module">
+                <h2>模块三</h2>
+                <p>这里是模块三的介绍内容。</p>
+                <div class="icon">🌍</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

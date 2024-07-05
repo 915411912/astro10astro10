@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Navigation Bar</title>
+    <style>
+        /* 重置一些基本元素的样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* 导航条样式 */
+        .navbar {
+            background-color:#99bd9b; /* 绿色背景 */
+            color: #fff; /* 文字颜色 */
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            height: 60px; /* 导航条高度 */
+        }
+
+        /* 导航链接容器样式 */
+        .nav-container {
+            display: flex;
+            list-style: none;
+        }
+
+        /* 导航链接样式 */
+        .nav-link {
+            color: #fff; /* 文字颜色 */
+            text-decoration: none; /* 去除下划线 */
+            padding: 15px 60px; /* 内边距 */
+            transition: background-color 0.3s ease; /* 背景颜色渐变效果 */
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            background-color: #fcf403; /* 鼠标悬停或聚焦时的背景色 */
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 568px) {
+            .nav-container {
+                flex-direction: column; /* 垂直排列链接 */
+                width: 100%; /* 占满宽度 */
+            }
+
+            .nav-link {
+                padding: 10px; /* 调整内边距 */
+                text-align: center; /* 文本居中 */
+                border-bottom: 1px solid #dc3131; /* 添加底部边框以区分链接 */
+            }
+
+            .nav-link:last-child {
+                border-bottom: none; /* 最后一个链接不显示底部边框 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/"class="nav-link">Home</a>
+            <a href="/about/" class="nav-link">About</a>
+            <a href="/blog/" class="nav-link">blog</a>
+            <a href="/notes/" class="nav-link">notes</a>
+        </div>
+    </nav>
+</body>
+</html>

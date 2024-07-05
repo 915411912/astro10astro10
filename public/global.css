@@ -1,0 +1,23 @@
+/* 撒花或撒彩带的CSS动画 */
+@keyframes confetti {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.confetti {
+    position: absolute;
+    top: -10px; /* 初始位置在视口外 */
+    animation: confetti 3s linear infinite;
+}
+
+/* 为不同的彩带定义不同的动画延迟和位置 */
+.confetti:nth-child(1) { left: 10%; animation-delay: 0s; }
+.confetti:nth-child(2) { left: 20%; animation-delay: 1s; }
+.confetti:nth-child(3) { left: 30%; animation-delay: 0.5s; }
+/* 以此类推，根据需要添加更多彩带 */
